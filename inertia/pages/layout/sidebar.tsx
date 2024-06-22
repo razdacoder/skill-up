@@ -62,7 +62,7 @@ export default function SideBar() {
                   href={route.route}
                   className={cn(
                     'flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:bg-primary/20',
-                    isActive && 'bg-primary'
+                    isActive && 'bg-primary hover:bg-primary/90'
                   )}
                 >
                   <route.icon className="h-4 w-4" />

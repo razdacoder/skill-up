@@ -7,3 +7,10 @@ export const registerValidation = vine.compile(
     password: vine.string().minLength(8).confirmed(),
   })
 )
+
+export const loginValidator = vine.compile(
+  vine.object({
+    email: vine.string().email().normalizeEmail(),
+    password: vine.string().minLength(8),
+  })
+)
