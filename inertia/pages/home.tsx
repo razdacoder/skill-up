@@ -1,13 +1,14 @@
-import { Head } from '@inertiajs/react'
-import { Button } from '~/components/ui/button'
+import { Head, usePage } from '@inertiajs/react'
 
-export default function Home(props: { version: number }) {
+import type { SharedProps } from '@adonisjs/inertia/types'
+
+export default function Home() {
+  const { props } = usePage<SharedProps>()
   return (
     <>
       <Head title="Home" />
 
-      <Button>Click Me {props.version}</Button>
-      <img src="resources/assets/logo.svg" alt="" />
+      <main className="min-h-screen "></main>
     </>
   )
 }

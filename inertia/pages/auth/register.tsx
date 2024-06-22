@@ -73,6 +73,7 @@ export default function Register() {
               <Input
                 value={data.password}
                 placeholder="Password"
+                type="password"
                 name="password"
                 id="password"
                 onChange={(e) => setData('password', e.target.value)}
@@ -88,6 +89,7 @@ export default function Register() {
               <Input
                 value={data.password_confirmation}
                 placeholder="Confirm Password"
+                type="password"
                 name="password_confirmation"
                 id="password_confirmation"
                 onChange={(e) => setData('password_confirmation', e.target.value)}

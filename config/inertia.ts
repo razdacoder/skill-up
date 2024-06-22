@@ -1,3 +1,4 @@
+import { UserDto } from '#models/user'
 import { defineConfig } from '@adonisjs/inertia'
 import type { InferSharedProps } from '@adonisjs/inertia/types'
 
@@ -12,6 +13,8 @@ const inertiaConfig = defineConfig({
    */
   sharedData: {
     errors: (ctx) => ctx.session?.flashMessages.get('errors'),
+    user: (ctx) => new UserDto(ctx.auth?.user).toJson(),
+    isAuthenticated: (ctx) => ctx.auth.isAuthenticated,
   },
 
   /**

@@ -4,6 +4,24 @@ import hash from '@adonisjs/core/services/hash'
 import { BaseModel, column } from '@adonisjs/lucid/orm'
 import { DateTime } from 'luxon'
 
+export class UserDto {
+  constructor(private user?: User) {}
+
+  toJson() {
+    if (!this.user) {
+      return null
+    }
+    return {
+      id: this.user.id,
+      fullName: this.user.fullName,
+      email: this.user.email,
+      avatarUrl: this.user.avatarUrl,
+      isAdmin: this.user.isAdmin,
+      isEmailVerified: this.user.isEmailVerified,
+    }
+  }
+}
+
 const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
   uids: ['email'],
   passwordColumnName: 'password',
