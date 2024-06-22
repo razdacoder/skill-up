@@ -17,13 +17,13 @@ const routes = [
     icon: PanelsTopLeft,
   },
   {
-    label: 'Library',
-    route: '/library',
+    label: 'Courses',
+    route: '/courses',
     icon: LibraryBig,
   },
   {
     label: 'My Courses',
-    route: '/courses',
+    route: '/library',
     icon: BookOpen,
   },
 
@@ -43,8 +43,8 @@ const routes = [
 export default function SideBar() {
   const { url } = usePage()
   return (
-    <aside className="bg-black/50 border rounded-2xl m-3">
-      <div className="flex h-full flex-col gap-8 py-4">
+    <aside className=" max-h-screen p-3">
+      <div className="flex h-full flex-col gap-8 py-4 bg-black/50 border rounded-2xl">
         <div className="flex items-center gap-x-2 justify-center">
           <img src="../resources/assets/logo.svg" alt="Logo" className="size-8" />
           <h2 className="text-xl font-semibold italic">SKILLUP</h2>
@@ -52,7 +52,7 @@ export default function SideBar() {
         <div className="flex-1">
           <nav className="grid items-start px-2 text-sm font-medium lg:px-4 space-y-4">
             {routes.map((route) => {
-              const isActive = route.route === url
+              const isActive = url === '/' ? route.route === url : route.route.startsWith(url)
               return (
                 <Link
                   href={route.route}

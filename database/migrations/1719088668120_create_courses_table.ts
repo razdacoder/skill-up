@@ -10,8 +10,8 @@ export default class extends BaseSchema {
       table.string('slug').notNullable().unique()
       table.text('description').nullable()
       table.float('price').notNullable()
-      table.integer('teacher_id').references('id').inTable('users').notNullable()
       table.string('image_url').notNullable()
+      table.boolean('is_published').defaultTo(false)
 
       table.timestamp('created_at')
       table.timestamp('updated_at')

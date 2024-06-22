@@ -10,10 +10,10 @@
 
   @viteReactRefresh()
   @inertiaHead()
-  @vite(['inertia/app/app.tsx', `inertia/pages/${page.component}.tsx`])
+  @vite(['inertia/css/app.css','inertia/app/app.tsx', `inertia/pages/${page.component}.tsx`])
 </head>
 
-<body>
+<body class=" selection:bg-primary selection:text-white">
   @inertia()
 </body>
 
