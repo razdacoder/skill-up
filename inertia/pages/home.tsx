@@ -1,15 +1,13 @@
-import { Head, usePage } from '@inertiajs/react'
-
-import type { SharedProps } from '@adonisjs/inertia/types'
+import { Head } from '@inertiajs/react'
+import DashBoardLayout from './layout/dashboard'
 
 export default function Home() {
-  const { props } = usePage<SharedProps>()
+  // const { props } = usePage<SharedProps>()
   return (
-    <>
+    <DashBoardLayout>
       <Head title="Home" />
-
       <main className="min-h-screen "></main>
-    </>
+    </DashBoardLayout>
   )
 }
 
