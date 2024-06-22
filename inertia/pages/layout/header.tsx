@@ -3,15 +3,10 @@ import { usePage } from '@inertiajs/react'
 import { Input } from '~/components/ui/input'
 import { getInitial } from '~/lib/utils'
 
-type Props = {
-  title: string
-}
-
-export default function Header({ title }: Props) {
+export default function Header() {
   const { props } = usePage<SharedProps>()
   return (
     <div className="flex items-center justify-between mr-6">
-      <h1 className="text-2xl font-bold">{title}</h1>
       <form action="">
         <Input placeholder="Search courses..." className="rounded-full w-96" />
       </form>

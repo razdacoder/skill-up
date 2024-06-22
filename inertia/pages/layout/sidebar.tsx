@@ -1,11 +1,10 @@
 import { Link, usePage } from '@inertiajs/react'
 import {
-  BookMarked,
   BookOpen,
-  Calendar,
   HelpCircle,
   LibraryBig,
   LogOutIcon,
+  MessageSquareText,
   PanelsTopLeft,
   Settings,
 } from 'lucide-react'
@@ -27,16 +26,13 @@ const routes = [
     route: '/courses',
     icon: BookOpen,
   },
+
   {
-    label: 'Homework',
-    route: '/homework',
-    icon: BookMarked,
+    label: 'Messages',
+    route: '/messages',
+    icon: MessageSquareText,
   },
-  {
-    label: 'Schedules',
-    route: '/schedules',
-    icon: Calendar,
-  },
+
   {
     label: 'Settings',
     route: '/settings',
@@ -61,7 +57,7 @@ export default function SideBar() {
                 <Link
                   href={route.route}
                   className={cn(
-                    'flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:bg-primary/20',
+                    'flex items-center gap-3 rounded-lg px-3 py-3 transition-all hover:bg-primary/20',
                     isActive && 'bg-primary hover:bg-primary/90'
                   )}
                 >
