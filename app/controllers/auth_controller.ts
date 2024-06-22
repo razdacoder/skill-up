@@ -4,4 +4,8 @@ export default class AuthController {
   async register_show({ inertia }: HttpContext) {
     return inertia.render('auth/register')
   }
+
+  async login_show({ inertia }: HttpContext) {
+    return inertia.render('auth/login')
+  }
 }

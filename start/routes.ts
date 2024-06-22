@@ -19,6 +19,8 @@ router
       .get('/register', [AuthController, 'register_show'])
       .as('register_show')
       .use(middleware.guest())
+
+    router.get('/login', [AuthController, 'login_show']).as('login_show').use(middleware.guest())
   })
   .prefix('/auth')
   .as('auth')
