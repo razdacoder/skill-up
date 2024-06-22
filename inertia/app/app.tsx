@@ -1,15 +1,17 @@
 /// <reference path="../../adonisrc.ts" />
 /// <reference path="../../config/inertia.ts" />
 
+import { ThemeProvider } from '@/components/theme_provider'
 import { resolvePageComponent } from '@adonisjs/inertia/helpers'
 import { createInertiaApp } from '@inertiajs/react'
 import { hydrateRoot } from 'react-dom/client'
+
 import '../css/app.css'
 
-const appName = import.meta.env.VITE_APP_NAME || 'AdonisJS'
+const appName = import.meta.env.VITE_APP_NAME || 'SkillUp'
 
 createInertiaApp({
-  progress: { color: '#5468FF' },
+  progress: { color: '#e11d48' },
 
   title: (title) => `${title} - ${appName}`,
 
@@ -18,6 +20,11 @@ createInertiaApp({
   },
 
   setup({ el, App, props }) {
-    hydrateRoot(el, <App {...props} />)
+    hydrateRoot(
+      el,
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <App {...props} />
+      </ThemeProvider>
+    )
   },
 })
