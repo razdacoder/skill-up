@@ -77,7 +77,11 @@ export default function SideBar() {
             <HelpCircle className="size-4" />
             Help
           </Link>
-          <Link href="/logout" className="text-sm flex items-center gap-x-2 px-3 py-2">
+          <Link
+            href="/auth/logout"
+            method="post"
+            className="text-sm flex items-center gap-x-2 px-3 py-2"
+          >
             <LogOutIcon className="size-4" />
             Logout
           </Link>

@@ -26,6 +26,8 @@ router
       .use(middleware.guest())
 
     router.get('/login', [AuthController, 'login_show']).as('login_show').use(middleware.guest())
+    router.post('/login', [AuthController, 'login_store']).as('login_store').use(middleware.guest())
+    router.post('/logout', [AuthController, 'logout']).as('logout').use(middleware.auth())
   })
   .prefix('/auth')
   .as('auth')

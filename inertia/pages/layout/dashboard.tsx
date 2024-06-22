@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-import Header from './header'
 import SideBar from './sidebar'
 
 type Props = {
@@ -10,10 +9,7 @@ export default function DashBoardLayout({ children }: Props) {
   return (
     <div className="grid h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       <SideBar />
-      <div className="flex flex-col m-3 py-4">
-        <Header />
-        {children}
-      </div>
+      <div className="flex flex-col m-3 py-4">{children}</div>
     </div>
   )
 }
