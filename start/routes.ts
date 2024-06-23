@@ -10,10 +10,17 @@
 const AuthController = () => import('#controllers/auth_controller')
 import router from '@adonisjs/core/services/router'
 import { middleware } from './kernel.js'
-const CoursesController = () => import('#controllers/courses_controller')
 const DashboardController = () => import('#controllers/dashboard_controller')
-router.get('/', [DashboardController, 'index']).as('home').use(middleware.auth())
-router.get('/courses', [CoursesController, 'index']).as('course.index').use(middleware.auth())
+
+router
+  .group(() => {
+    router.get('/', [DashboardController, 'index']).as('home')
+    router.get('courses', [DashboardController, 'courses']).as('courses')
+    router.get('library', [DashboardController, 'library']).as('library')
+    router.get('messages', [DashboardController, 'messages']).as('messages')
+    router.get('settings', [DashboardController, 'settings']).as('settings')
+  })
+  .use(middleware.auth())
 
 router
   .group(() => {

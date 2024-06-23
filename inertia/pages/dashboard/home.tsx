@@ -1,7 +1,7 @@
 import { Head, Link } from '@inertiajs/react'
 import { ArrowRight } from 'lucide-react'
 import CourseCard from '~/components/course_card'
-import DashBoardLayout from './layout/dashboard'
+import DashBoardLayout from '../layout/dashboard'
 
 export default function Home() {
   return (

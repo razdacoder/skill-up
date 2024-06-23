@@ -76,6 +76,7 @@ export default function SideBar() {
           <Link
             href="/auth/logout"
             method="post"
+            as="button"
             className="text-sm flex items-center gap-x-2 px-3 py-2"
           >
             <LogOutIcon className="size-4" />

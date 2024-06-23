@@ -1,13 +1,13 @@
 import { Head } from '@inertiajs/react'
 import CourseCard from '~/components/course_card'
-import DashBoardLayout from './layout/dashboard'
+import DashBoardLayout from '../layout/dashboard'
 
-export default function Home() {
+export default function Messages() {
   return (
     <DashBoardLayout>
       <Head title="Courses" />
       <main className="space-y-4">
-        <h5 className="text-sm font-medium">Library</h5>
+        <h5 className="text-sm font-medium">Settings</h5>
 
         <div className="space-y-5">
           <h3 className="text-xl font-medium">All Courses</h3>
